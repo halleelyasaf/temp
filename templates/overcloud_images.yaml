@@ -1,0 +1,79 @@
+# Generated with the following on 2023-06-01T10:43:15.318749
+#
+#   openstack overcloud container image prepare --namespace satellite.auto.bos2.lab --prefix=redhat-juniper-osp13_containers --tag-from-label {version}-{release} --push-destination=192.168.24.1:8787 --output-env-file=/home/stack/templates/overcloud_images.yaml --output-images-file /home/stack/local_registry_images.yaml
+#
+
+parameter_defaults:
+  DockerAodhApiImage: 192.168.24.1:8787/redhat-juniper-osp13_containers-aodh-api:13.0-159.1652312984
+  DockerAodhConfigImage: 192.168.24.1:8787/redhat-juniper-osp13_containers-aodh-api:13.0-159.1652312984
+  DockerAodhEvaluatorImage: 192.168.24.1:8787/redhat-juniper-osp13_containers-aodh-evaluator:13.0-159.1652312982
+  DockerAodhListenerImage: 192.168.24.1:8787/redhat-juniper-osp13_containers-aodh-listener:13.0-158.1652312979
+  DockerAodhNotifierImage: 192.168.24.1:8787/redhat-juniper-osp13_containers-aodh-notifier:13.0-162.1652312976
+  DockerCeilometerCentralImage: 192.168.24.1:8787/redhat-juniper-osp13_containers-ceilometer-central:13.0-156.1652312999
+  DockerCeilometerComputeImage: 192.168.24.1:8787/redhat-juniper-osp13_containers-ceilometer-compute:13.0-158.1652312996
+  DockerCeilometerConfigImage: 192.168.24.1:8787/redhat-juniper-osp13_containers-ceilometer-central:13.0-156.1652312999
+  DockerCeilometerNotificationImage: 192.168.24.1:8787/redhat-juniper-osp13_containers-ceilometer-notification:13.0-160.1652312990
+  DockerCinderApiImage: 192.168.24.1:8787/redhat-juniper-osp13_containers-cinder-api:13.0-167.1652313100
+  DockerCinderConfigImage: 192.168.24.1:8787/redhat-juniper-osp13_containers-cinder-api:13.0-167.1652313100
+  DockerCinderSchedulerImage: 192.168.24.1:8787/redhat-juniper-osp13_containers-cinder-scheduler:13.0-168.1652313094
+  DockerCinderVolumeImage: 192.168.24.1:8787/redhat-juniper-osp13_containers-cinder-volume:13.0-168.1652313091
+  DockerClustercheckConfigImage: 192.168.24.1:8787/redhat-juniper-osp13_containers-mariadb:13.0-167.1652306891
+  DockerClustercheckImage: 192.168.24.1:8787/redhat-juniper-osp13_containers-mariadb:13.0-167.1652306891
+  DockerCrondConfigImage: 192.168.24.1:8787/redhat-juniper-osp13_containers-cron:13.0-174.1652306905
+  DockerCrondImage: 192.168.24.1:8787/redhat-juniper-osp13_containers-cron:13.0-174.1652306905
+  DockerGlanceApiConfigImage: 192.168.24.1:8787/redhat-juniper-osp13_containers-glance-api:13.0-163.1652313031
+  DockerGlanceApiImage: 192.168.24.1:8787/redhat-juniper-osp13_containers-glance-api:13.0-163.1652313031
+  DockerGnocchiApiImage: 192.168.24.1:8787/redhat-juniper-osp13_containers-gnocchi-api:13.0-163.1652313025
+  DockerGnocchiConfigImage: 192.168.24.1:8787/redhat-juniper-osp13_containers-gnocchi-api:13.0-163.1652313025
+  DockerGnocchiMetricdImage: 192.168.24.1:8787/redhat-juniper-osp13_containers-gnocchi-metricd:13.0-162.1652313022
+  DockerGnocchiStatsdImage: 192.168.24.1:8787/redhat-juniper-osp13_containers-gnocchi-statsd:13.0-162.1652313019
+  DockerHAProxyConfigImage: 192.168.24.1:8787/redhat-juniper-osp13_containers-haproxy:13.0-171.1652306896
+  DockerHAProxyImage: 192.168.24.1:8787/redhat-juniper-osp13_containers-haproxy:13.0-171.1652306896
+  DockerHeatApiCfnConfigImage: 192.168.24.1:8787/redhat-juniper-osp13_containers-heat-api-cfn:13.0-157.1652312840
+  DockerHeatApiCfnImage: 192.168.24.1:8787/redhat-juniper-osp13_containers-heat-api-cfn:13.0-157.1652312840
+  DockerHeatApiConfigImage: 192.168.24.1:8787/redhat-juniper-osp13_containers-heat-api:13.0-158.1652312837
+  DockerHeatApiImage: 192.168.24.1:8787/redhat-juniper-osp13_containers-heat-api:13.0-158.1652312837
+  DockerHeatConfigImage: 192.168.24.1:8787/redhat-juniper-osp13_containers-heat-api:13.0-158.1652312837
+  DockerHeatEngineImage: 192.168.24.1:8787/redhat-juniper-osp13_containers-heat-engine:13.0-156.1652312834
+  DockerHorizonConfigImage: 192.168.24.1:8787/redhat-juniper-osp13_containers-horizon:13.0-166.1652312964
+  DockerHorizonImage: 192.168.24.1:8787/redhat-juniper-osp13_containers-horizon:13.0-166.1652312964
+  DockerInsecureRegistryAddress:
+  - 192.168.24.1:8787
+  DockerIscsidConfigImage: 192.168.24.1:8787/redhat-juniper-osp13_containers-iscsid:13.0-166.1652306894
+  DockerIscsidImage: 192.168.24.1:8787/redhat-juniper-osp13_containers-iscsid:13.0-166.1652306894
+  DockerKeystoneConfigImage: 192.168.24.1:8787/redhat-juniper-osp13_containers-keystone:13.0-157.1652312868
+  DockerKeystoneImage: 192.168.24.1:8787/redhat-juniper-osp13_containers-keystone:13.0-157.1652312868
+  DockerMemcachedConfigImage: 192.168.24.1:8787/redhat-juniper-osp13_containers-memcached:13.0-167.1652306888
+  DockerMemcachedImage: 192.168.24.1:8787/redhat-juniper-osp13_containers-memcached:13.0-167.1652306888
+  DockerMysqlClientConfigImage: 192.168.24.1:8787/redhat-juniper-osp13_containers-mariadb:13.0-167.1652306891
+  DockerMysqlConfigImage: 192.168.24.1:8787/redhat-juniper-osp13_containers-mariadb:13.0-167.1652306891
+  DockerMysqlImage: 192.168.24.1:8787/redhat-juniper-osp13_containers-mariadb:13.0-167.1652306891
+  DockerNeutronApiImage: 192.168.24.1:8787/redhat-juniper-osp13_containers-neutron-server:13.0-169.1652312798
+  DockerNeutronConfigImage: 192.168.24.1:8787/redhat-juniper-osp13_containers-neutron-server:13.0-169.1652312798
+  DockerNeutronDHCPImage: 192.168.24.1:8787/redhat-juniper-osp13_containers-neutron-dhcp-agent:13.0-168.1652312816
+  DockerNeutronL3AgentImage: 192.168.24.1:8787/redhat-juniper-osp13_containers-neutron-l3-agent:13.0-168.1652312813
+  DockerNeutronMetadataImage: 192.168.24.1:8787/redhat-juniper-osp13_containers-neutron-metadata-agent:13.0-169.1652312810
+  DockerNovaApiImage: 192.168.24.1:8787/redhat-juniper-osp13_containers-nova-api:13.0-167.1652312942
+  DockerNovaComputeImage: 192.168.24.1:8787/redhat-juniper-osp13_containers-nova-compute:13.0-193.1653391381
+  DockerNovaConductorImage: 192.168.24.1:8787/redhat-juniper-osp13_containers-nova-conductor:13.0-166.1652312933
+  DockerNovaConfigImage: 192.168.24.1:8787/redhat-juniper-osp13_containers-nova-api:13.0-167.1652312942
+  DockerNovaConsoleauthImage: 192.168.24.1:8787/redhat-juniper-osp13_containers-nova-consoleauth:13.0-165.1652312947
+  DockerNovaLibvirtConfigImage: 192.168.24.1:8787/redhat-juniper-osp13_containers-nova-compute:13.0-193.1653391381
+  DockerNovaLibvirtImage: 192.168.24.1:8787/redhat-juniper-osp13_containers-nova-libvirt:13.0-207.1653390382
+  DockerNovaMetadataImage: 192.168.24.1:8787/redhat-juniper-osp13_containers-nova-api:13.0-167.1652312942
+  DockerNovaPlacementConfigImage: 192.168.24.1:8787/redhat-juniper-osp13_containers-nova-placement-api:13.0-166.1652312930
+  DockerNovaPlacementImage: 192.168.24.1:8787/redhat-juniper-osp13_containers-nova-placement-api:13.0-166.1652312930
+  DockerNovaSchedulerImage: 192.168.24.1:8787/redhat-juniper-osp13_containers-nova-scheduler:13.0-167.1652312927
+  DockerNovaVncProxyImage: 192.168.24.1:8787/redhat-juniper-osp13_containers-nova-novncproxy:13.0-168.1652312944
+  DockerOpenvswitchImage: 192.168.24.1:8787/redhat-juniper-osp13_containers-neutron-openvswitch-agent:13.0-168.1652312805
+  DockerPankoApiImage: 192.168.24.1:8787/redhat-juniper-osp13_containers-panko-api:13.0-160.1652312686
+  DockerPankoConfigImage: 192.168.24.1:8787/redhat-juniper-osp13_containers-panko-api:13.0-160.1652312686
+  DockerRabbitmqConfigImage: 192.168.24.1:8787/redhat-juniper-osp13_containers-rabbitmq:13.0-169.1652306877
+  DockerRabbitmqImage: 192.168.24.1:8787/redhat-juniper-osp13_containers-rabbitmq:13.0-169.1652306877
+  DockerRedisConfigImage: 192.168.24.1:8787/redhat-juniper-osp13_containers-redis:13.0-168.1652309209
+  DockerRedisImage: 192.168.24.1:8787/redhat-juniper-osp13_containers-redis:13.0-168.1652309209
+  DockerSwiftAccountImage: 192.168.24.1:8787/redhat-juniper-osp13_containers-swift-account:13.0-156.1652312679
+  DockerSwiftConfigImage: 192.168.24.1:8787/redhat-juniper-osp13_containers-swift-proxy-server:13.0-159.1652312667
+  DockerSwiftContainerImage: 192.168.24.1:8787/redhat-juniper-osp13_containers-swift-container:13.0-160.1652312674
+  DockerSwiftObjectImage: 192.168.24.1:8787/redhat-juniper-osp13_containers-swift-object:13.0-156.1652312671
+  DockerSwiftProxyImage: 192.168.24.1:8787/redhat-juniper-osp13_containers-swift-proxy-server:13.0-159.1652312667

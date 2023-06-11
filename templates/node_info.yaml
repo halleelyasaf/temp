@@ -1,0 +1,20 @@
+parameter_defaults:
+  OvercloudControllerFlavor: control
+  OvercloudComputeFlavor: compute
+  OvercloudContrailControllerFlavor: contrail-controller
+  OvercloudContrailAnalyticsFlavor: contrail-analytics
+  OvercloudContrailAnalyticsDatabaseFlavor: contrail-analytics-database
+  ContrailControllerCount: 3
+  ControllerCount: 3
+  ComputeCount: 2
+  ContrailAnalyticsCount: 3
+  ContrailAnalyticsDatabaseCount: 3
+  BaseTripleoPackages:
+  - jq
+  - lvm2
+  - net-snmp
+  - openstack-selinux
+  - os-net-config
+  - puppet-tripleo
+  - python3-heat-agent*
+  - python3-openstackclient

@@ -1,0 +1,186 @@
+parameter_defaults:
+  ServiceNetMap:
+    ContrailDatabaseNetwork: internal_api
+    ContrailAnalyticsNetwork: internal_api
+    ContrailAnalyticsAlarmNetwork: internal_api
+    ContrailAnalyticsDatabaseNetwork: internal_api
+    ContrailAnalyticsSnmpNetwork: internal_api
+    ContrailConfigNetwork: internal_api
+    ContrailControlNetwork: tenant
+    ContrailControlOnlyNetwork: tenant
+    ContrailWebuiNetwork: internal_api
+    ContrailVrouterNetwork: tenant
+    ContrailDpdkNetwork: tenant
+    ContrailSriovNetwork: tenant
+    ContrailCertmongerUserNetwork: internal_api
+    ContrailIssuNetwork: internal_api
+    ContrailIssuControlNetwork: tenant
+    ContrailIssuScriptNetwork: internal_api
+    # In case of using custom network for Conraril controller this should be defined
+    # as well as RabbitMQ use hostname for host resolving.
+    # Default value is defined for all roles as:
+    #   .//network/service_net_map.j2.yaml: {{role.name}}HostnameResolveNetwork: internal_api
+    # ContrailControllerHostnameResolveNetwork: internal_api
+    # By default keystone admin is on ctlplane network,
+    # change it if needed to use another network
+    # KeystoneAdminApiNetwork: internal_api
+
+  OvercloudControllerFlavor: control
+  OvercloudContrailControllerFlavor: contrail-controller
+  OvercloudContrailAnalyticsFlavor: contrail-analytics
+  OvercloudContrailAnalyticsDatabaseFlavor: contrail-analytics-database
+  OvercloudContrailControlOnlyFlavor: control-only
+  OvercloudComputeFlavor: compute
+  OvercloudContrailDpdkFlavor: compute-dpdk
+  OvercloudContrailSriovFlavor: compute-sriov
+  OvercloudContrailAioFlavor: contrail-controller
+  ControllerCount: 3
+  ContrailAioCount: 0
+  ContrailControllerCount: 3
+  ContrailAnalyticsCount: 3
+  ContrailAnalyticsDatabaseCount: 3
+  ContrailControlOnlyCount: 0
+  ComputeCount: 2
+  ContrailDpdkCount: 0
+  ContrailSriovCount: 0
+  NeutronMetadataProxySharedSecret: secret
+  #DockerInsecureRegistryAddress: 192.168.24.1:8787
+  #  - rhospd13-undercloud.ctlplane.localdomain:8787/contrail
+  #        #     - 192.168.24.1:8787
+          # 192.168.24.1:8787
+          #ContrailRegistryInsecure: true
+  ContrailImageTag: 21.4.0.133
+  #DockerContrailAnalyticsAlarmGenImageName: rhospd13-undercloud.ctlplane.localdomain:8787/contrail/contrail-analytics-alarm-gen:21.4.0.133
+  #DockerContrailAnalyticsApiImageName: rhospd13-undercloud.ctlplane.localdomain:8787/contrail/contrail-analytics-api:21.4.0.133
+  #DockerContrailAnalyticsCollectorImageName: rhospd13-undercloud.ctlplane.localdomain:8787/contrail/contrail-analytics-collector:21.4.0.133
+  #DockerContrailAnalyticsQueryEngineImageName: rhospd13-undercloud.ctlplane.localdomain:8787/contrail/contrail-analytics-query-engine:21.4.0.133
+  #DockerContrailAnalyticsSnmpCollectorImageName: rhospd13-undercloud.ctlplane.localdomain:8787/contrail/contrail-analytics-snmp-collector:21.4.0.133
+  #DockerContrailAnalyticsTopologyImageName: rhospd13-undercloud.ctlplane.localdomain:8787/contrail/contrail-analytics-snmp-topology:21.4.0.133
+  #DockerContrailCassandraImageName: rhospd13-undercloud.ctlplane.localdomain:8787/contrail/contrail-external-cassandra:21.4.0.133
+  #DockerContrailConfigApiImageName: rhospd13-undercloud.ctlplane.localdomain:8787/contrail/contrail-controller-config-api:21.4.0.133
+  #DockerContrailConfigDevicemgrImageName: rhospd13-undercloud.ctlplane.localdomain:8787/contrail/contrail-controller-config-devicemgr:21.4.0.133
+  #DockerContrailConfigSchemaImageName: rhospd13-undercloud.ctlplane.localdomain:8787/contrail/contrail-controller-config-schema:21.4.0.133
+  #DockerContrailConfigSvcmonitorImageName: rhospd13-undercloud.ctlplane.localdomain:8787/contrail/contrail-controller-config-svcmonitor:21.4.0.133
+  #DockerContrailControlControlImageName: rhospd13-undercloud.ctlplane.localdomain:8787/contrail/contrail-controller-control-control:21.4.0.133
+  #DockerContrailControlDnsImageName: rhospd13-undercloud.ctlplane.localdomain:8787/contrail/contrail-controller-control-dns:21.4.0.133
+  #DockerContrailControlNamedImageName: rhospd13-undercloud.ctlplane.localdomain:8787/contrail/contrail-controller-control-named:21.4.0.133
+  #DockerContrailHeatPluginImageName: rhospd13-undercloud.ctlplane.localdomain:8787/contrail/contrail-openstack-heat-init:21.4.0.133
+  #DockerContrailKafkaImageName: rhospd13-undercloud.ctlplane.localdomain:8787/contrail/contrail-external-kafka:21.4.0.133
+  #DockerContrailNeutronPluginImageName: rhospd13-undercloud.ctlplane.localdomain:8787/contrail/contrail-openstack-neutron-init:21.4.0.133
+  #DockerContrailNodeInitImageName: rhospd13-undercloud.ctlplane.localdomain:8787/contrail/contrail-node-init:21.4.0.133
+  #DockerContrailNodemgrImageName: rhospd13-undercloud.ctlplane.localdomain:8787/contrail/contrail-nodemgr:21.4.0.133
+  #DockerContrailNovaPluginImageName: rhospd13-undercloud.ctlplane.localdomain:8787/contrail/contrail-openstack-compute-init:21.4.0.133
+  #DockerContrailRabbitmqImageName: rhospd13-undercloud.ctlplane.localdomain:8787/contrail/contrail-external-rabbitmq:21.4.0.133
+  #DockerContrailRedisImageName: rhospd13-undercloud.ctlplane.localdomain:8787/contrail/contrail-external-redis:21.4.0.133
+  #DockerContrailStunnelImageName: rhospd13-undercloud.ctlplane.localdomain:8787/contrail/contrail-external-stunnel:21.4.0.133
+  #DockerContrailStatusImageName: rhospd13-undercloud.ctlplane.localdomain:8787/contrail/contrail-status:21.4.0.133
+  #DockerContrailVrouterAgentContainerName: rhospd13-undercloud.ctlplane.localdomain:8787/contrail/contrail-vrouter-agent:21.4.0.133
+  #DockerContrailVrouterAgentDpdkContainerName: rhospd13-undercloud.ctlplane.localdomain:8787/contrail/contrail-vrouter-agent-dpdk:21.4.0.133
+  #DockerContrailVrouterAgentImageName: rhospd13-undercloud.ctlplane.localdomain:8787/contrail/contrail-vrouter-agent:21.4.0.133
+  #DockerContrailVrouterKernelInitDpdkImageName: rhospd13-undercloud.ctlplane.localdomain:8787/contrail/contrail-vrouter-kernel-init-dpdk:21.4.0.133
+  #DockerContrailVrouterKernelInitImageName: rhospd13-undercloud.ctlplane.localdomain:8787/contrail/contrail-vrouter-kernel-init:21.4.0.133
+  #DockerContrailWebuiJobImageName: rhospd13-undercloud.ctlplane.localdomain:8787/contrail/contrail-controller-webui-job:21.4.0.133
+  #DockerContrailWebuiWebImageName: rhospd13-undercloud.ctlplane.localdomain:8787/contrail/contrail-controller-webui-web:21.4.0.133
+  #DockerContrailZookeeperImageName: rhospd13-undercloud.ctlplane.localdomain:8787/contrail/contrail-external-zookeeper:21.4.0.133
+  # Enable use of hugepages for vrouter agent
+  # Note, enabling hugepages in OS kernel is done below via KernelArgs args.
+  ContrailVrouterHugepages2MB: ''
+  ContrailVrouterHugepages1GB: '2'
+
+# (to disable just put empty value '')
+# KernelArgs for nodes can be changed here
+  ComputeParameters:
+    KernelArgs: "default_hugepagesz=1GB hugepagesz=1G hugepages=2"
+    ExtraSysctlSettings:
+      # must be equal to value from 1G kernel args: hugepages=2
+      vm.nr_hugepages:
+        value: 2
+      vm.max_map_count:
+        value: 128960
+
+# ContrailDefaults - environment passed to provisione container
+# Pass all params as a list of strings
+  ContrailDefaults:
+    # if APPLY_DEFAULTS is set to false - provisioner container will be started, but
+    # provisioning will not be executed.
+    APPLY_DEFAULTS: "True"
+
+# Custome Contrail container configuration settings
+  ContrailSettings:
+    VROUTER_ENCRYPTION: false
+    # !!! Vrouter gateway: adjust yo your setup
+    VROUTER_GATEWAY: 10.0.0.1
+    # 16 bit BGP Autonomous System number for the cluster.
+    BGP_ASN: 64512
+    # Supported values are true/false. When true, system will automatically create BGP peering mesh with all control-nodes that have same BGP AS number as global AS number.
+    BGP_AUTO_MESH: true
+
+# Mellanox with kernel node doesnt requre any additions.
+# TODO: in further as soon as Mellanox supports full-offload
+# feature the following parmater will be needed to enable fresh drivers:
+# (for now it is not needed)
+# DockerContrailVrouterPluginInitImageName: contrail-vrouter-plugin-mellanox-init-redhat
+#
+# Note: Mellanox with DPDK mode requries to set 'driver: mlnx' in the appropriate NIC file
+
+  ContrailDpdkParameters:
+    KernelArgs: "intel_iommu=on iommu=pt default_hugepagesz=1GB hugepagesz=1G hugepages=4 hugepagesz=2M hugepages=1024"
+    ExtraSysctlSettings:
+      # must be equal to value from 1G kernel args: hugepages=4
+      vm.nr_hugepages:
+        value: 4
+      vm.max_map_count:
+        value: 128960
+    # Tuned-d profile configuration
+    #   TunedProfileName -  Name of tuned profile
+    #   IsolCpusList     -  Logical CPUs list to be isolated from the host process (applied via cpu-partitioning tuned).
+    #                       It is mandatory to provide isolated cpus for tuned to achive optimal performance.
+    #                       Example: "3-8,12-15,18"
+    # TunedProfileName: "cpu-partitioning"
+    # IsolCpusList: "3-20"
+    ContrailSettings:
+      DPDK_UIO_DRIVER: uio_pci_generic
+      VROUTER_ENCRYPTION: false
+      BGP_ASN: 64512
+      BGP_AUTO_MESH: true
+      LACP_RATE: 0
+      # NIC_OFFLOAD_ENABLE: true
+      # SERVICE_CORE_MASK: '0x03'
+      # DPDK_CTRL_THREAD_MASK: '0x03'
+
+  # !! Adjust to your setup
+  ContrailSriovParameters:
+    KernelArgs: "intel_iommu=on iommu=pt default_hugepagesz=1GB hugepagesz=1G hugepages=4 hugepagesz=2M hugepages=1024"
+    ExtraSysctlSettings:
+      # must be equal to value from 1G kernel args: hugepages=4
+      vm.nr_hugepages:
+        value: 4
+      vm.max_map_count:
+        value: 128960
+    # vfio_iommu_type1 driver needed for sriov
+    ExtraKernelModules:
+      vfio: {}
+    # !! Adjust to your setup
+    ContrailSriovNumVFs: ["ens2f1:3"]
+    ContrailSriovMode: 'kernel'
+    NovaPCIPassthrough:
+      - devname: "ens2f1"
+        physical_network: "tenant"
+    # Tuned-d profile configuration
+    #   TunedProfileName -  Name of tuned profile
+    #   IsolCpusList     -  Logical CPUs list to be isolated from the host process (applied via cpu-partitioning tuned).
+    #                       It is mandatory to provide isolated cpus for tuned to achive optimal performance.
+    #                       Example: "3-8,12-15,18"
+    # TunedProfileName: "cpu-partitioning"
+    # IsolCpusList: "3-20"
+    ContrailSettings:
+      # Adjust for ContrailSriovMode: dpdk
+      # DPDK_UIO_DRIVER: uio_pci_generic
+      VROUTER_ENCRYPTION: false
+      BGP_ASN: 64512
+      BGP_AUTO_MESH: true
+      LACP_RATE: 0
+      # NIC_OFFLOAD_ENABLE: true
+      # SERVICE_CORE_MASK: '0x03'
+      # DPDK_CTRL_THREAD_MASK: '0x03'
+  AdminPassword: redhat
